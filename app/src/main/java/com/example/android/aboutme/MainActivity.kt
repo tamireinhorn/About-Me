@@ -1,8 +1,10 @@
 package com.example.android.aboutme
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -24,7 +26,9 @@ class MainActivity : AppCompatActivity() {
         editText.visibility = View.GONE
         button.visibility = View.GONE
         nicknameTextView.visibility = View.VISIBLE //Hides the edit text and the button but now shows the nickname
-
+        // Hide the keyboard.
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(button.windowToken, 0)
     }
 }
 
