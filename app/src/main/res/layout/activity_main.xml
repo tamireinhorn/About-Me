@@ -14,6 +14,21 @@
         android:text="@string/name"
         android:textAlignment="center" />
 
+    <TextView
+        android:id="@+id/nickname_text"
+        style="@style/NameStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/star_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:contentDescription="@string/yellow_star"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
     <EditText
         android:id="@+id/nickname_edit"
         style="@style/NameStyle"
@@ -25,13 +40,13 @@
         android:minHeight="48dp"
         android:textAlignment="center" />
 
-    <ImageView
-        android:id="@+id/star_image"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/done_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/layout_margin"
-        android:contentDescription="@string/yellow_star"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        android:layout_gravity="center_horizontal"
+        android:text="@string/done" />
 
     <ScrollView
         android:id="@+id/bio_scroll"
