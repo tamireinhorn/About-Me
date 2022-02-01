@@ -12,16 +12,17 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    private val myName: MyName = MyName(name = "Vitor Botelho de Souza") //Instantiate the class with nickname empty.
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
+        binding.myName = myName
         binding.doneButton.setOnClickListener { addNickname(it) }
     }
     private fun addNickname(button: View){
         binding.apply { //Saves us from having to constantly reference the binding.
-            nicknameText.text =  nicknameEdit.text // Sets the nickname as the text in the edit pane.
+            myName?.nickname =  nicknameEdit.text.toString() // Sets the nickname as the text in the edit pane. Modifies the class.
             invalidateAll() // Refreshes the bindings.
             nicknameEdit.visibility = View.GONE
             doneButton.visibility = View.GONE
